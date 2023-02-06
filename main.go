@@ -33,7 +33,7 @@ func main(){
 	if err != nil{
 		log.Fatal(err)
 	}
-	// fmt.Printf("responseBody: %s\n", responseBody)
+	fmt.Printf("responseBody: %s\n", responseBody)
 
 	var responseObject report
     json.Unmarshal(responseBody, &responseObject)
