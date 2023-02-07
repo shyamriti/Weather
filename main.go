@@ -33,14 +33,16 @@ func main(){
 	if err != nil{
 		log.Fatal(err)
 	}
-	fmt.Printf("responseBody: %s\n", responseBody)
+	// fmt.Printf("responseBody: %s\n", responseBody)
 
 	var responseObject report
     json.Unmarshal(responseBody, &responseObject)
-	fmt.Printf("responseObject: %v\n", responseObject)
+	// fmt.Printf("responseObject: %v\n", responseObject)
     fmt.Println("City name",responseObject.CityName)
 	fmt.Println("Temparature ", responseObject.Main.TempActual - 273.15)
-
+	fmt.Println("Maximum Temparature ", responseObject.Main.TempMax - 273.15)
+	fmt.Println("Minimum Temparature ", responseObject.Main.TempMin - 273.15)
     fmt.Println("Wind details",responseObject.Wind.Speed)
+	
 	
 }
